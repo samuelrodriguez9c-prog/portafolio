@@ -1,5 +1,7 @@
 # Portafolio — Samuel Rodríguez
 
+🌐 **En línea:** https://samuel-rodriguez.vercel.app
+
 Portafolio personal hecho en **Angular 21** (componentes standalone, signals, zoneless) con **Transloco** para español/inglés.
 
 ## Correrlo en local
