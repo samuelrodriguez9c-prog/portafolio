@@ -1,0 +1,58 @@
+<section id="contact" class="contact inspectable">
+  <app-inspect-tag label='<app-contacto [form]="mensaje">' />
+
+  <div class="container wrap">
+    <div class="left">
+      <h2 class="display title" appReveal>{{ 'contact.title' | transloco }}</h2>
+      <p class="lead" appReveal [revealDelay]="80">{{ 'contact.lead' | transloco }}</p>
+      <div class="list mono" appReveal [revealDelay]="140">
+        <a [href]="'mailto:' + contact.email">{{ 'contact.email' | transloco }}<span>{{ contact.email }} ↗</span></a>
+        <a [href]="contact.linkedin" target="_blank" rel="noopener">linkedin<span>{{ 'contact.profile' | transloco }} ↗</span></a>
+        <a [href]="contact.github" target="_blank" rel="noopener">github<span>{{ contact.githubUser }} ↗</span></a>
+      </div>
+    </div>
+
+    <div class="card" appReveal [revealDelay]="120">
+      @if (!sent()) {
+        <form [formGroup]="form" (ngSubmit)="send()" novalidate animate.enter="anim-rise">
+          <label for="c-name" class="mono">{{ 'contact.name' | transloco }}</label>
+          <input id="c-name" type="text" formControlName="name" autocomplete="name"
+            [placeholder]="'contact.namePh' | transloco" [attr.aria-invalid]="invalid('name')" />
+          @if (invalid('name')) {
+            <span class="error" animate.enter="anim-rise">{{ 'contact.errors.name' | transloco }}</span>
+          }
+
+          <label for="c-email" class="mono">{{ 'contact.email' | transloco }}</label>
+          <input id="c-email" type="email" formControlName="email" autocomplete="email"
+            placeholder="tu@empresa.com" [attr.aria-invalid]="invalid('email')" />
+          @if (invalid('email')) {
+            <span class="error" animate.enter="anim-rise">{{ 'contact.errors.email' | transloco }}</span>
+          }
+
+          <label for="c-msg" class="mono">{{ 'contact.message' | transloco }}</label>
+          <textarea id="c-msg" rows="4" formControlName="message"
+            [placeholder]="'contact.messagePh' | transloco" [attr.aria-invalid]="invalid('message')"></textarea>
+          @if (invalid('message')) {
+            <span class="error" animate.enter="anim-rise">{{ 'contact.errors.message' | transloco }}</span>
+          }
+
+          <button type="submit" class="btn btn-solid send">{{ 'contact.send' | transloco }} →</button>
+        </form>
+      } @else {
+        <div class="done" role="status" animate.enter="anim-pop">
+          <span class="mono ok">✓ {{ 'contact.doneTag' | transloco }}</span>
+          <span class="display done-title">{{ 'contact.doneTitle' | transloco }}</span>
+          <span class="done-text">{{ 'contact.doneText' | transloco }}</span>
+          <button type="button" class="btn btn-ghost again" (click)="reset()">{{ 'contact.again' | transloco }}</button>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<footer class="footer mono">
+  <div class="container foot">
+    <span>© 2026 Samuel David Rodríguez Romero</span>
+    <span>{{ 'footer.made' | transloco }}</span>
+  </div>
+</footer>

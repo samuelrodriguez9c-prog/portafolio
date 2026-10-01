@@ -1,0 +1,35 @@
+<header class="bar">
+  <nav class="container inner mono" [attr.aria-label]="'nav.label' | transloco">
+    <a href="#top" class="brand"><span class="square"></span>SR/portafolio</a>
+
+    <div class="right">
+      <div class="links">
+        @for (link of links; track link) {
+          <a [href]="'#' + link">./{{ 'nav.' + link | transloco }}</a>
+        }
+      </div>
+
+      <button
+        type="button"
+        class="inspect"
+        [class.on]="store.inspect()"
+        [attr.aria-pressed]="store.inspect()"
+        (click)="store.toggleInspect()"
+      >
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M3 3l7.07 16.97 2.51-7.39 7.39-2.51L3 3z" />
+          <path d="M13 13l6 6" />
+        </svg>
+        {{ (store.inspect() ? 'nav.inspecting' : 'nav.inspect') | transloco }}
+      </button>
+
+      <div class="lang" role="group" [attr.aria-label]="'nav.language' | transloco">
+        <button type="button" [class.active]="language.lang() === 'es'" [attr.aria-pressed]="language.lang() === 'es'"
+          (click)="language.set('es')">ES</button>
+        <button type="button" [class.active]="language.lang() === 'en'" [attr.aria-pressed]="language.lang() === 'en'"
+          (click)="language.set('en')">EN</button>
+      </div>
+    </div>
+  </nav>
+</header>

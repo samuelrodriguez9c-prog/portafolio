@@ -1,0 +1,169 @@
+{
+  "nav": {
+    "label": "Main navigation",
+    "projects": "projects",
+    "timeline": "journey",
+    "stack": "stack",
+    "contact": "contact",
+    "inspect": "Inspect",
+    "inspecting": "Inspecting",
+    "language": "Language"
+  },
+  "hero": {
+    "role": "frontend · full stack developer",
+    "status": "available · remote",
+    "lead": "I build Angular interfaces —and what runs behind them— for",
+    "pick": "Pick a sector",
+    "sectors": {
+      "entrepreneurs": "small businesses",
+      "credit": "rural lending",
+      "field": "agriculture"
+    },
+    "explore": "Explore projects",
+    "cv": "Download CV",
+    "preview": "preview",
+    "seeCase": "See the case",
+    "svg": "SVG animation"
+  },
+  "projects": {
+    "title": "Projects",
+    "intro": "Pick a project. If you filter by a technology in ./stack, the projects where I used it light up here.",
+    "summary": "4 projects · 2 in production",
+    "filterOn": "filter: {{skill}} — highlighted in orange",
+    "built": "What I built",
+    "goods": {
+      "kind": "Multi-tenant SaaS · personal",
+      "period": "2026 — ongoing",
+      "role": "Full Stack",
+      "alt": "Goods staff panel with test data",
+      "desc": "Inventory and back-office for small businesses: each business gets its own panel and login, and the Goods team manages clients, plans and support from a staff panel.",
+      "built": {
+        "0": "Per-module roles and permissions matrix",
+        "1": "Audit log and real-time presence (WebSocket)",
+        "2": "Plans, subscriptions, assisted onboarding and support chat"
+      }
+    },
+    "banku": {
+      "kind": "Agricultural lending · Agrico",
+      "period": "2025 — 2026",
+      "role": "Frontend",
+      "alt": "Bankú interface",
+      "desc": "Online agricultural lending platform. I owned the navigation and the credit simulator components.",
+      "built": {
+        "0": "Navbar architecture",
+        "1": "Mega-menu for credit products",
+        "2": "Credit simulator components with chart",
+        "3": "Custom loading animations and optimized SVG paths"
+      }
+    },
+    "agrico": {
+      "kind": "Agri e-commerce · Agrico",
+      "period": "2025 — 2026",
+      "role": "Frontend",
+      "alt": "Agrico interface",
+      "desc": "Agricultural e-commerce and admin panel backed by a Laravel API. I worked on authentication and key UI pieces.",
+      "built": {
+        "0": "Login flows",
+        "1": "Dynamic backgrounds",
+        "2": "Alert components"
+      }
+    },
+    "terraza": {
+      "kind": "Orders & invoicing · team",
+      "period": "2024",
+      "role": "Full Stack · team of 3",
+      "alt": "Mi Terraza interface",
+      "desc": "Orders, warehouse, suppliers and invoicing system with authentication, password recovery by email and real-time notifications.",
+      "built": {
+        "0": "Login and password recovery",
+        "1": "Orders, warehouse and invoicing modules",
+        "2": "WebSocket notifications"
+      }
+    },
+    "noMedia": "2024 project with no live demo. This is how its frontend is organized:"
+  },
+  "shots": {
+    "staff": "staff panel",
+    "signup": "client signup",
+    "assistant": "support",
+    "login": "login",
+    "home": "home",
+    "catalog": "catalog",
+    "checkout": "checkout",
+    "megaMenu": "mega-menu",
+    "simulator": "simulator"
+  },
+  "links": {
+    "frontendCode": "Frontend code",
+    "privateBackend": "Private backend",
+    "live": "See it live",
+    "code": "See code"
+  },
+  "timeline": {
+    "title": "Journey",
+    "goods": {
+      "date": "2026 — now",
+      "title": "Goods: multi-tenant SaaS",
+      "body": "Personal full-stack project: Angular 21 + NestJS + PostgreSQL, with roles, audit log and real time."
+    },
+    "agrico": {
+      "date": "Aug 2025 — Sep 2026",
+      "title": "Frontend / Full Stack · Agrico Distribuidora Agropecuaria",
+      "body": "Bankú: navbar, mega-menu and credit simulator. Agrico: login, dynamic backgrounds and alerts."
+    },
+    "terraza": {
+      "date": "2024",
+      "title": "Mi Terraza · team project",
+      "body": "Orders and invoicing system with Angular 17 and NestJS."
+    },
+    "amerika": {
+      "date": "Jul 2023 — Jan 2024",
+      "title": "Software Developer · Amerika TIS S.A.S.",
+      "body": "Features, modules and views for enterprise software, frontend and backend: Java with JSF, PrimeFaces and Hibernate, an Android Studio app, and work with Angular, TypeScript and NestJS."
+    },
+    "sena": {
+      "date": "2021 — 2023",
+      "title": "Information Systems Analysis & Development Technologist · SENA",
+      "body": "Where it all started."
+    }
+  },
+  "stack": {
+    "intro": "Tap a technology to see which projects I used it in. Tap again to clear the filter.",
+    "seeProjects": "see in projects",
+    "also": "Also: Java (JSF, PrimeFaces, Hibernate) · Android Studio · PHP · C# · Git, GitHub, GitLab · MVC · responsive design · SVG animation."
+  },
+  "contact": {
+    "title": "Let's talk",
+    "lead": "Hiring for an Angular role or have a project? Write to me and I'll get back to you soon.",
+    "email": "email",
+    "profile": "my profile",
+    "name": "name",
+    "namePh": "Your name",
+    "message": "message",
+    "messagePh": "Tell me about the role or project",
+    "send": "Send message",
+    "mailSubject": "Contact from portfolio — {{name}}",
+    "errors": {
+      "name": "Please enter your name.",
+      "email": "That email looks incomplete.",
+      "message": "Tell me a bit more (at least 10 characters)."
+    },
+    "doneTag": "ready to send",
+    "doneTitle": "Almost there",
+    "doneText": "I opened your email app with the message ready. Just hit send.",
+    "again": "Write another"
+  },
+  "inspector": {
+    "title": "inspector mode",
+    "built": "How this page is built:",
+    "standalone": "standalone components",
+    "signals": "state with signals",
+    "i18n": "i18n with Transloco",
+    "animations": "animations with animate.enter",
+    "project": "project",
+    "filter": "filter"
+  },
+  "footer": {
+    "made": "built with Angular · try Inspect mode ↑"
+  }
+}

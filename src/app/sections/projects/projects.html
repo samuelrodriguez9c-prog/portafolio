@@ -1,0 +1,109 @@
+<section id="projects" class="projects inspectable">
+  <app-inspect-tag [label]="inspectLabel()" />
+
+  <div class="container wrap">
+    <div class="section-head">
+      <h2 class="display section-title" appReveal>{{ 'projects.title' | transloco }}</h2>
+      <p appReveal [revealDelay]="80">{{ 'projects.intro' | transloco }}</p>
+    </div>
+
+    <div class="explorer" appReveal [revealDelay]="120">
+      <div class="index" role="tablist" [attr.aria-label]="'projects.title' | transloco">
+        @for (p of store.projects; track p.id) {
+          <button
+            type="button"
+            role="tab"
+            class="row"
+            [class.active]="p.id === store.projectId()"
+            [class.match]="store.skillId() && store.matchesSkill(p.id)"
+            [class.dim]="p.id !== store.projectId() && !store.matchesSkill(p.id)"
+            [attr.aria-selected]="p.id === store.projectId()"
+            (click)="store.selectProject(p.id)"
+          >
+            <span class="mono num">{{ p.num }}</span>
+            <span class="row-text">
+              <span class="row-name">{{ p.name }}</span>
+              <span class="row-kind">{{ 'projects.' + p.id + '.kind' | transloco }}</span>
+            </span>
+            <span class="mono arrow">{{ p.id === store.projectId() ? '●' : '→' }}</span>
+          </button>
+        }
+        <p class="mono note">
+          @if (store.skill(); as skill) {
+            {{ 'projects.filterOn' | transloco: { skill: skill.label } }}
+          } @else {
+            {{ 'projects.summary' | transloco }}
+          }
+        </p>
+      </div>
+
+      @for (p of [store.project()]; track p.id) {
+        <article class="detail">
+          <div class="stage">
+            @if (store.shot(); as shot) {
+              <div class="frame">
+                @for (s of [shot]; track s.src) {
+                  <app-media [shot]="s" [alt]="'projects.' + p.id + '.alt' | transloco" animate.enter="anim-settle" />
+                }
+              </div>
+              <div class="tabs">
+                @for (s of p.shots; track s.src; let i = $index) {
+                  <button
+                    type="button"
+                    class="mono tab"
+                    [class.active]="s.src === shot.src"
+                    [attr.aria-pressed]="s.src === shot.src"
+                    (click)="store.shotIndex.set(i)"
+                  >
+                    {{ s.label | transloco }}
+                  </button>
+                }
+              </div>
+            } @else {
+              <div class="frame empty mono" animate.enter="anim-rise">
+                <p class="tree-note">{{ 'projects.noMedia' | transloco }}</p>
+                @if (p.tree; as tree) {
+                  <pre class="tree"><span class="prompt">$</span> tree {{ tree.root }}
+@for (item of tree.items; track item; let last = $last) {<span class="branch">{{ last ? '└──' : '├──' }}</span> {{ item }}/
+}</pre>
+                }
+              </div>
+            }
+          </div>
+
+          <div class="info">
+            <div class="main anim-rise">
+              <span class="mono kicker">
+                {{ 'projects.' + p.id + '.period' | transloco }} · {{ 'projects.' + p.id + '.role' | transloco }}
+              </span>
+              <h3 class="display pname">{{ p.name }}</h3>
+              <p class="desc">{{ 'projects.' + p.id + '.desc' | transloco }}</p>
+              <div class="links">
+                @for (l of p.links; track l.href) {
+                  <a [href]="l.href" target="_blank" rel="noopener">{{ l.label | transloco }} ↗</a>
+                }
+                @if (p.lock) {
+                  <span class="lock">{{ p.lock | transloco }}</span>
+                }
+              </div>
+            </div>
+
+            <div class="side anim-rise-3">
+              <span class="mono label">{{ 'projects.built' | transloco }}</span>
+              <ul>
+                @for (i of range(p.builtCount); track i) {
+                  <li><span class="plus">+</span>{{ 'projects.' + p.id + '.built.' + i | transloco }}</li>
+                }
+              </ul>
+              <div class="stack">
+                @for (t of p.stack; track t) {
+                  <span class="mono">{{ t }}</span>
+                }
+              </div>
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>

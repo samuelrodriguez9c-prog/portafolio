@@ -1,0 +1,278 @@
+.hero {
+  border-bottom: var(--border);
+}
+
+.wrap {
+  padding-block: 72px 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px 16px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ink);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--ok);
+  box-shadow: 0 0 0 0 rgb(24 169 87 / 0.5);
+  animation: ping 2.4s var(--ease) infinite;
+}
+
+@keyframes ping {
+  70% {
+    box-shadow: 0 0 0 8px rgb(24 169 87 / 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgb(24 169 87 / 0);
+  }
+}
+
+.name {
+  font-size: clamp(76px, 15.5vw, 236px);
+  line-height: 0.8;
+  letter-spacing: -0.01em;
+}
+
+.caret {
+  display: inline-block;
+  width: 0.08em;
+  height: 0.8em;
+  margin-left: 0.06em;
+  vertical-align: -0.05em;
+  background: var(--accent);
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  align-items: stretch;
+}
+
+.copy {
+  flex: 1 1 460px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  justify-content: space-between;
+}
+
+.lead {
+  margin: 0;
+  font-size: clamp(22px, 2.4vw, 34px);
+  line-height: 1.25;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.sectors {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sector {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 64px;
+  padding: 0 22px;
+  border: var(--border);
+  background: transparent;
+  text-align: left;
+  font-family: var(--font-display);
+  font-stretch: 75%;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: clamp(20px, 2.2vw, 30px);
+  transition: background-color 0.25s var(--ease), color 0.25s var(--ease), transform 0.25s var(--ease),
+    box-shadow 0.25s var(--ease);
+
+  .to {
+    font-weight: 500;
+    font-size: 13px;
+    text-transform: none;
+    white-space: nowrap;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 0 var(--ink);
+  }
+
+  &:hover .arrow {
+    transform: translateX(4px);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  &.active {
+    background: var(--ink);
+    color: var(--paper);
+  }
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.preview {
+  flex: 1 1 520px;
+  display: flex;
+  flex-direction: column;
+  background: var(--ink);
+  color: var(--paper);
+  border: var(--border);
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease);
+
+  &:hover {
+    color: var(--paper);
+    transform: translateY(-4px);
+    box-shadow: 8px 8px 0 var(--accent);
+  }
+
+  &:hover .arrow {
+    transform: translateX(5px);
+  }
+}
+
+.preview-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 16px;
+  font-size: 12px;
+  color: var(--muted-dark);
+}
+
+.dots {
+  display: flex;
+  gap: 6px;
+}
+
+.track {
+  position: relative;
+  width: 26px;
+  height: 4px;
+  background: #3a3a36;
+  overflow: hidden;
+}
+
+.fill {
+  position: absolute;
+  inset: 0;
+  background: var(--accent);
+  transform-origin: left;
+
+  &.running {
+    animation: fill linear both;
+  }
+
+  &.paused {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes fill {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.screen {
+  position: relative;
+  flex-grow: 1;
+  min-height: 320px;
+  overflow: hidden;
+  background: #1a1a18;
+
+  app-media {
+    position: absolute;
+    inset: 0;
+  }
+}
+
+.preview-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px;
+  flex-wrap: wrap;
+}
+
+.pname {
+  font-family: var(--font-display);
+  font-stretch: 75%;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 26px;
+}
+
+.see {
+  font-size: 14px;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+/* Cinta de tecnologías */
+.tape {
+  overflow: hidden;
+  background: var(--accent);
+  border-bottom: var(--border);
+  white-space: nowrap;
+  font-family: var(--font-display);
+  font-stretch: 62%;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 28px;
+  line-height: 56px;
+  letter-spacing: 0.02em;
+
+  &:hover .tape-inner {
+    animation-play-state: paused;
+  }
+}
+
+.tape-inner {
+  display: inline-flex;
+  animation: tape 40s linear infinite;
+}
+
+@keyframes tape {
+  to {
+    transform: translateX(-50%);
+  }
+}

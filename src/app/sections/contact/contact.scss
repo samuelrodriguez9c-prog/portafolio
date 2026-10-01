@@ -1,0 +1,150 @@
+.contact {
+  background: var(--accent);
+}
+
+.wrap {
+  padding-block: 88px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px;
+}
+
+.left {
+  flex: 1 1 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.title {
+  font-size: clamp(64px, 9vw, 140px);
+  line-height: 0.82;
+}
+
+.lead {
+  margin: 0;
+  max-width: 440px;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  border-top: var(--border);
+  font-size: 15px;
+
+  a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    min-height: 56px;
+    border-bottom: var(--border);
+    background: linear-gradient(var(--ink), var(--ink)) left bottom / 0 1.5px no-repeat;
+    transition: background-size 0.35s var(--ease), padding 0.3s var(--ease), color 0.2s var(--ease);
+
+    &:hover {
+      color: var(--ink);
+      padding-left: 8px;
+      background-size: 100% 3px;
+    }
+  }
+}
+
+.card {
+  flex: 1 1 400px;
+  background: var(--paper);
+  border: var(--border);
+  box-shadow: 10px 10px 0 var(--ink);
+  padding: 28px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+label {
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+input,
+textarea {
+  min-height: 48px;
+  padding: 0 14px;
+  border: var(--border);
+  background: #fff;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.25s var(--ease), box-shadow 0.25s var(--ease);
+
+  &:focus {
+    border-color: var(--accent);
+    box-shadow: 4px 4px 0 var(--ink);
+  }
+
+  &[aria-invalid='true'] {
+    border-color: #b42318;
+  }
+}
+
+textarea {
+  padding-block: 12px;
+  resize: vertical;
+}
+
+.error {
+  font-size: 13px;
+  color: #b42318;
+}
+
+.send {
+  margin-top: 18px;
+  justify-content: center;
+  min-height: 54px;
+}
+
+.done {
+  min-height: 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+}
+
+.ok {
+  font-size: 13px;
+  color: var(--ok);
+}
+
+.done-title {
+  font-size: 54px;
+  line-height: 0.9;
+}
+
+.done-text {
+  font-size: 16px;
+  color: var(--muted);
+}
+
+.again {
+  align-self: flex-start;
+  min-height: 44px;
+}
+
+.footer {
+  background: var(--ink);
+  color: var(--muted-dark);
+  font-size: 12px;
+}
+
+.foot {
+  padding-block: 24px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}

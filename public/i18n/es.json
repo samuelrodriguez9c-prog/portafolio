@@ -1,0 +1,169 @@
+{
+  "nav": {
+    "label": "Navegación principal",
+    "projects": "proyectos",
+    "timeline": "trayectoria",
+    "stack": "stack",
+    "contact": "contacto",
+    "inspect": "Inspeccionar",
+    "inspecting": "Inspeccionando",
+    "language": "Idioma"
+  },
+  "hero": {
+    "role": "desarrollador frontend · full stack",
+    "status": "disponible · remoto",
+    "lead": "Construyo interfaces en Angular —y lo que hay detrás— para",
+    "pick": "Elige un sector",
+    "sectors": {
+      "entrepreneurs": "emprendedores",
+      "credit": "el crédito rural",
+      "field": "el campo"
+    },
+    "explore": "Explorar proyectos",
+    "cv": "Descargar CV",
+    "preview": "vista_previa",
+    "seeCase": "Ver el caso",
+    "svg": "Animaciones SVG"
+  },
+  "projects": {
+    "title": "Proyectos",
+    "intro": "Elige un proyecto. Si filtras por una tecnología en ./stack, aquí se resaltan los proyectos donde la usé.",
+    "summary": "4 proyectos · 2 en producción",
+    "filterOn": "filtro: {{skill}} — resaltados en naranja",
+    "built": "Lo que construí",
+    "goods": {
+      "kind": "SaaS multi-tenant · propio",
+      "period": "2026 — en curso",
+      "role": "Full Stack",
+      "alt": "Panel de staff de Goods con datos de prueba",
+      "desc": "Inventario y administración para emprendimientos: cada negocio tiene su propio panel y login, y el equipo de Goods gestiona clientes, planes y soporte desde un panel de staff.",
+      "built": {
+        "0": "Matriz de roles y permisos por módulo",
+        "1": "Auditoría y presencia en tiempo real (WebSocket)",
+        "2": "Planes, suscripciones, alta asistida y chat de soporte"
+      }
+    },
+    "banku": {
+      "kind": "Crédito agropecuario · Agrico",
+      "period": "2025 — 2026",
+      "role": "Frontend",
+      "alt": "Interfaz de Bankú",
+      "desc": "Plataforma de crédito agropecuario en línea. Me encargué de la navegación y de los componentes del simulador de crédito.",
+      "built": {
+        "0": "Arquitectura de la navbar",
+        "1": "Mega-menú de productos de crédito",
+        "2": "Componentes del simulador con gráfico",
+        "3": "Animaciones de carga y rutas SVG optimizadas"
+      }
+    },
+    "agrico": {
+      "kind": "E-commerce agro · Agrico",
+      "period": "2025 — 2026",
+      "role": "Frontend",
+      "alt": "Interfaz de Agrico",
+      "desc": "E-commerce agropecuario y panel administrativo conectado a una API en Laravel. Trabajé la autenticación y piezas clave de la interfaz.",
+      "built": {
+        "0": "Flujos de login",
+        "1": "Fondos dinámicos",
+        "2": "Componentes de alerta"
+      }
+    },
+    "terraza": {
+      "kind": "Pedidos y facturación · en equipo",
+      "period": "2024",
+      "role": "Full Stack · equipo de 3",
+      "alt": "Interfaz de Mi Terraza",
+      "desc": "Sistema de pedidos, bodega, proveedores y facturación con autenticación, recuperación de contraseña por correo y notificaciones en tiempo real.",
+      "built": {
+        "0": "Login y recuperación de contraseña",
+        "1": "Módulos de pedidos, bodega y facturación",
+        "2": "Notificaciones con WebSockets"
+      }
+    },
+    "noMedia": "Proyecto de 2024 sin demo en línea. Así está organizado su frontend:"
+  },
+  "shots": {
+    "staff": "panel staff",
+    "signup": "alta de cliente",
+    "assistant": "soporte",
+    "login": "login",
+    "home": "inicio",
+    "catalog": "catálogo",
+    "checkout": "checkout",
+    "megaMenu": "mega-menú",
+    "simulator": "simulador"
+  },
+  "links": {
+    "frontendCode": "Código del frontend",
+    "privateBackend": "Backend privado",
+    "live": "Ver en producción",
+    "code": "Ver código"
+  },
+  "timeline": {
+    "title": "Trayectoria",
+    "goods": {
+      "date": "2026 — hoy",
+      "title": "Goods: SaaS multi-tenant",
+      "body": "Proyecto propio full stack: Angular 21 + NestJS + PostgreSQL, con roles, auditoría y tiempo real."
+    },
+    "agrico": {
+      "date": "ago 2025 — sep 2026",
+      "title": "Frontend / Full Stack · Agrico Distribuidora Agropecuaria",
+      "body": "Bankú: navbar, mega-menú y simulador de crédito. Agrico: login, fondos dinámicos y alertas."
+    },
+    "terraza": {
+      "date": "2024",
+      "title": "Mi Terraza · proyecto en equipo",
+      "body": "Sistema de pedidos y facturación con Angular 17 y NestJS."
+    },
+    "amerika": {
+      "date": "jul 2023 — ene 2024",
+      "title": "Desarrollador de Software · Amerika TIS S.A.S.",
+      "body": "Funciones, módulos y vistas para software empresarial, en frontend y backend: Java con JSF, PrimeFaces e Hibernate, una app en Android Studio y desarrollo con Angular, TypeScript y NestJS."
+    },
+    "sena": {
+      "date": "2021 — 2023",
+      "title": "Tecnólogo en Análisis y Desarrollo de Sistemas · SENA",
+      "body": "Donde empezó todo."
+    }
+  },
+  "stack": {
+    "intro": "Toca una tecnología para ver en qué proyectos la usé. Toca otra vez para quitar el filtro.",
+    "seeProjects": "ver en proyectos",
+    "also": "También: Java (JSF, PrimeFaces, Hibernate) · Android Studio · PHP · C# · Git, GitHub, GitLab · patrón MVC · diseño responsive · animaciones SVG."
+  },
+  "contact": {
+    "title": "Hablemos",
+    "lead": "¿Tienes una vacante o un proyecto en Angular? Escríbeme y te respondo pronto.",
+    "email": "correo",
+    "profile": "mi perfil",
+    "name": "nombre",
+    "namePh": "Tu nombre",
+    "message": "mensaje",
+    "messagePh": "Cuéntame de la vacante o el proyecto",
+    "send": "Enviar mensaje",
+    "mailSubject": "Contacto desde el portafolio — {{name}}",
+    "errors": {
+      "name": "Escribe tu nombre.",
+      "email": "Revisa el correo: parece incompleto.",
+      "message": "Cuéntame un poco más (mínimo 10 caracteres)."
+    },
+    "doneTag": "listo para enviar",
+    "doneTitle": "Casi listo",
+    "doneText": "Abrí tu aplicación de correo con el mensaje armado. Solo falta darle enviar.",
+    "again": "Escribir otro"
+  },
+  "inspector": {
+    "title": "modo inspector",
+    "built": "Así está armada esta página:",
+    "standalone": "componentes standalone",
+    "signals": "estado con signals",
+    "i18n": "i18n con Transloco",
+    "animations": "animaciones con animate.enter",
+    "project": "proyecto",
+    "filter": "filtro"
+  },
+  "footer": {
+    "made": "hecho con Angular · prueba el modo Inspeccionar ↑"
+  }
+}

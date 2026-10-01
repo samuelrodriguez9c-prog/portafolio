@@ -1,0 +1,270 @@
+/* ===== Tokens ===== */
+:root {
+  --ink: #0e0e0c;
+  --paper: #f1f1ec;
+  --paper-2: #f7f7f3;
+  --line: #e2e2db;
+  --muted: #5d5d57;
+  --muted-dark: #b9b9b2;
+  --accent: #ff4a1c;
+  --accent-soft: #ffd9cc;
+  --inspect: #1f3bff;
+  --ok: #18a957;
+
+  --font-display: 'Archivo', 'Arial Narrow', sans-serif;
+  --font-body: 'Geist', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --ease: cubic-bezier(0.22, 0.7, 0.2, 1);
+  --border: 1.5px solid var(--ink);
+  --container: 1320px;
+}
+
+/* ===== Base ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s var(--ease);
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid var(--inspect);
+  outline-offset: 3px;
+}
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding-inline: 24px;
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+.blueprint {
+  background-image: linear-gradient(var(--line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.display {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-stretch: 62%;
+  text-transform: uppercase;
+  line-height: 0.85;
+}
+
+.section-title {
+  font-size: clamp(56px, 8vw, 120px);
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  flex-wrap: wrap;
+
+  p {
+    margin: 0;
+    max-width: 420px;
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--muted);
+  }
+}
+
+/* Sección marcable por el modo inspector */
+.inspectable {
+  position: relative;
+  outline: 2px dashed transparent;
+  outline-offset: -8px;
+  transition: outline-color 0.3s var(--ease);
+}
+
+.inspecting .inspectable {
+  outline-color: var(--inspect);
+}
+
+/* ===== Botones ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 0 24px;
+  border: var(--border);
+  font-weight: 600;
+  transition: background-color 0.25s var(--ease), color 0.25s var(--ease), transform 0.25s var(--ease);
+
+  svg {
+    transition: transform 0.25s var(--ease);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+.btn-solid {
+  background: var(--ink);
+  color: var(--paper);
+
+  &:hover {
+    background: var(--accent);
+    color: var(--ink);
+    transform: translateY(-2px);
+  }
+
+  &:hover svg {
+    transform: translateY(3px);
+  }
+}
+
+.btn-ghost {
+  background: transparent;
+
+  &:hover {
+    background: var(--ink);
+    color: var(--paper);
+    transform: translateY(-2px);
+  }
+}
+
+.arrow {
+  display: inline-block;
+  transition: transform 0.25s var(--ease);
+}
+
+/* ===== Animaciones ===== */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes settle {
+  from {
+    opacity: 0;
+    transform: scale(1.035);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+.anim-rise {
+  animation: rise 0.55s var(--ease) both;
+}
+
+.anim-rise-2 {
+  animation: rise 0.55s var(--ease) 0.08s both;
+}
+
+.anim-rise-3 {
+  animation: rise 0.55s var(--ease) 0.16s both;
+}
+
+.anim-settle {
+  animation: settle 0.7s var(--ease) both;
+}
+
+.anim-pop {
+  animation: pop 0.35s var(--ease) both;
+}
+
+.anim-leave {
+  animation: fade-out 0.25s var(--ease) both;
+}
+
+/* Revelado al hacer scroll (lo activa la directiva appReveal) */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s var(--ease), transform 0.6s var(--ease);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}

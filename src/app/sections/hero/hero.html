@@ -1,0 +1,91 @@
+<section id="top" class="hero blueprint inspectable">
+  <app-inspect-tag label='<app-hero [rotar]="true">' />
+
+  <div class="container wrap">
+    <div class="meta mono">
+      <span>// {{ 'hero.role' | transloco }}</span>
+      <span class="status"><span class="dot"></span>{{ 'hero.status' | transloco }}</span>
+      <span>Soledad, Atlántico — CO</span>
+    </div>
+
+    <h1 class="display name">Samuel<br />Rodriguez<span class="caret" aria-hidden="true"></span></h1>
+
+    <div class="grid">
+      <div class="copy">
+        <p class="lead">{{ 'hero.lead' | transloco }}</p>
+
+        <div class="sectors" role="tablist" [attr.aria-label]="'hero.pick' | transloco">
+          @for (s of store.sectors; track s.key; let i = $index) {
+            <button
+              type="button"
+              role="tab"
+              class="sector"
+              [class.active]="i === store.heroIndex()"
+              [attr.aria-selected]="i === store.heroIndex()"
+              (click)="store.pickHero(i)"
+            >
+              <span>{{ s.key | transloco }}</span>
+              <span class="mono to">{{ projectName(s.project) }} <span class="arrow">→</span></span>
+            </button>
+          }
+        </div>
+
+        <div class="actions">
+          <a href="#projects" class="btn btn-solid">
+            {{ 'hero.explore' | transloco }}
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M19 12l-7 7-7-7" /></svg>
+          </a>
+          <a [href]="cv" download class="btn btn-ghost">{{ 'hero.cv' | transloco }}</a>
+        </div>
+      </div>
+
+      <a
+        href="#projects"
+        class="preview"
+        (click)="store.openHeroProject()"
+        (mouseenter)="paused.set(true)"
+        (mouseleave)="paused.set(false)"
+      >
+        <div class="preview-bar mono">
+          <span>{{ 'hero.preview' | transloco }} / {{ store.heroProject().id }}</span>
+          <span class="dots">
+            @for (s of store.sectors; track s.key; let i = $index) {
+              <span class="track">
+                @if (i === store.heroIndex()) {
+                  <span
+                    class="fill"
+                    [class.running]="!store.heroTouched()"
+                    [class.paused]="paused()"
+                    [style.animation-duration.ms]="rotateMs"
+                  ></span>
+                }
+              </span>
+            }
+          </span>
+        </div>
+
+        <div class="screen">
+          @for (p of [store.heroProject()]; track p.id) {
+            <app-media [shot]="p.shots[0]" [alt]="'projects.' + p.id + '.alt' | transloco" animate.enter="anim-settle" />
+          }
+        </div>
+
+        <div class="preview-foot">
+          @for (p of [store.heroProject()]; track p.id) {
+            <span class="pname" animate.enter="anim-rise">{{ p.name }}</span>
+          }
+          <span class="see">{{ 'hero.seeCase' | transloco }} <span class="arrow">→</span></span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="tape" aria-hidden="true">
+  <span class="tape-inner">
+    @for (n of [0, 1]; track n) {
+      <span>Angular ✳ TypeScript ✳ NestJS ✳ PostgreSQL ✳ SCSS ✳ WebSockets ✳ UX/UI ✳ {{ 'hero.svg' | transloco }} ✳&nbsp;</span>
+    }
+  </span>
+</div>
