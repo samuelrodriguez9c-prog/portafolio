@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
 import { TranslocoPipe } from '@jsverse/transloco';
+import { OTHER_LANGUAGES } from '../../core/portfolio.data';
 import { PortfolioStore } from '../../core/portfolio.store';
 import { InspectTag } from '../../shared/inspect-tag';
 import { RevealDirective } from '../../shared/reveal.directive';
@@ -38,6 +39,13 @@ import { RevealDirective } from '../../shared/reveal.directive';
             <a href="#projects">{{ 'stack.seeProjects' | transloco }} ↑</a>
           </div>
         }
+
+        <div class="other" appReveal [revealDelay]="160">
+          <span class="mono other-label">{{ 'stack.other' | transloco }}</span>
+          @for (lang of otherLanguages; track lang) {
+            <span class="tag">{{ lang }}</span>
+          }
+        </div>
 
         <p class="also">{{ 'stack.also' | transloco }}</p>
       </div>
@@ -109,6 +117,28 @@ import { RevealDirective } from '../../shared/reveal.directive';
     .accent {
       color: var(--accent);
     }
+    .other {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+    }
+    .other-label {
+      font-size: 12px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-right: 6px;
+    }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 40px;
+      padding: 0 14px;
+      border: 1.5px dashed var(--ink);
+      font-size: 15px;
+      font-weight: 500;
+    }
     .also {
       margin: 0;
       font-size: 15px;
@@ -118,6 +148,7 @@ import { RevealDirective } from '../../shared/reveal.directive';
 })
 export class Stack {
   protected store = inject(PortfolioStore);
+  protected readonly otherLanguages = OTHER_LANGUAGES;
   protected readonly usedIn = computed(() =>
     this.store
       .projectsWithSkill()

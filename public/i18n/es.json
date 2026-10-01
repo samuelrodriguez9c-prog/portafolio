@@ -130,7 +130,8 @@
   "stack": {
     "intro": "Toca una tecnología para ver en qué proyectos la usé. Toca otra vez para quitar el filtro.",
     "seeProjects": "ver en proyectos",
-    "also": "También: Java (JSF, PrimeFaces, Hibernate) · Android Studio · PHP · C# · Git, GitHub, GitLab · patrón MVC · diseño responsive · animaciones SVG."
+    "also": "También: Java (JSF, PrimeFaces, Hibernate) · Android Studio · Git, GitHub, GitLab · patrón MVC · diseño responsive · animaciones SVG.",
+    "other": "Otros lenguajes"
   },
   "contact": {
     "title": "Hablemos",

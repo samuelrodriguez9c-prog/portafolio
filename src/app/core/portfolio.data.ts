@@ -3,6 +3,7 @@ export type SkillId =
   | 'ts'
   | 'scss'
   | 'nest'
+  | 'node'
   | 'rest'
   | 'ws'
   | 'pg'
@@ -76,7 +77,7 @@ export const PROJECTS: Project[] = [
     name: 'Goods',
     builtCount: 3,
     stack: ['Angular 21', 'NestJS', 'PostgreSQL', 'WebSocket', 'SCSS'],
-    skills: ['angular', 'ts', 'nest', 'pg', 'scss', 'ws', 'rest'],
+    skills: ['angular', 'ts', 'nest', 'node', 'pg', 'scss', 'ws', 'rest'],
     shots: [
       video('goods-staff', 'shots.staff'),
       video('goods-alta', 'shots.signup'),
@@ -124,7 +125,7 @@ export const PROJECTS: Project[] = [
     name: 'Mi Terraza',
     builtCount: 3,
     stack: ['Angular 17', 'Material', 'Tailwind', 'NestJS', 'MySQL'],
-    skills: ['angular', 'ts', 'nest', 'mysql', 'tailwind', 'material', 'ws', 'jwt', 'rest'],
+    skills: ['angular', 'ts', 'nest', 'node', 'mysql', 'tailwind', 'material', 'ws', 'jwt', 'rest'],
     shots: [],
     links: [{ label: 'links.code', href: 'https://github.com/Isaito05/mi_terraza_vista' }],
     tree: {
@@ -139,6 +140,7 @@ export const SKILLS: Skill[] = [
   { id: 'ts', label: 'TypeScript' },
   { id: 'scss', label: 'SCSS' },
   { id: 'nest', label: 'NestJS' },
+  { id: 'node', label: 'Node.js' },
   { id: 'rest', label: 'APIs REST' },
   { id: 'ws', label: 'WebSockets' },
   { id: 'pg', label: 'PostgreSQL' },
@@ -148,6 +150,9 @@ export const SKILLS: Skill[] = [
   { id: 'tailwind', label: 'Tailwind' },
   { id: 'jwt', label: 'JWT / Passport' },
 ];
+
+/** Lenguajes que domino pero no aparecen en los proyectos del explorador (no filtran). */
+export const OTHER_LANGUAGES = ['JavaScript', 'Java', 'PHP', 'C#', 'Dart'];
 
 /** El orden del hero: cada sector apunta a un proyecto. */
 export const HERO_SECTORS: { key: string; project: ProjectId }[] = [
