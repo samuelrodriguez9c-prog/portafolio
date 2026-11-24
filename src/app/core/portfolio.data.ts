@@ -82,7 +82,7 @@ export const PROJECTS: Project[] = [
       video('goods-staff', 'shots.staff'),
       video('goods-alta', 'shots.signup'),
       video('goods-asistente', 'shots.assistant'),
-      video('goods-login', 'shots.login'),
+      video('goods-login-and-panel', 'shots.login'),
     ],
     links: [
       { label: 'links.frontendCode', href: 'https://github.com/samuelrodriguez9c-prog/goods-frontend' },
@@ -175,5 +175,5 @@ export const CONTACT = {
   linkedin: 'https://www.linkedin.com/in/samuel-rodriguez-782382433',
   github: 'https://github.com/samuelrodriguez9c-prog',
   githubUser: 'samuelrodriguez9c-prog',
-  cv: 'cv/Samuel-Rodriguez-CV.pdf',
+  cv: 'cv/CV-Samuel-Rodriguez.pdf',
 };
